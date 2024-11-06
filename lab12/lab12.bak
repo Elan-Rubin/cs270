@@ -1,0 +1,13 @@
+#lang racket
+
+; input-contract: num is an integer x in pnum
+; output-contract: (succ num) is the pnum for x + 1
+(define (succ num)
+  (cons 's num))
+
+; input-contract: num is an integer x in pnum
+; output-contract: (pred num) is the pnum for x - 1
+(define (pred num)
+  (if (null? num)
+      null
+      (rest num)))
