@@ -1,0 +1,12 @@
+#lang racket
+
+;
+;left: (first (rest T))
+;right: (first (rest (rest T)))
+
+(define (countVals T)
+  (+
+   (first T)
+   (countVals (first (rest T))) ;left
+   (countVals (first (rest (rest T))))) ;right
+   )
